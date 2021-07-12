@@ -108,24 +108,6 @@ sudo -u $userName defaults write $OneHome/Library/Preferences/.GlobalPreferences
 
 
 # ----------------------------------------------------------
-# ----------------Disable Guest Account Login---------------
-# ----------------------------------------------------------
-#echo '--- Disable Guest Account Login'
-#sudo defaults write /Library/Preferences/com.apple.loginwindow.plist GuestEnabled -bool false
-# ----------------------------------------------------------
-
-
-
-# ----------------------------------------------------------
-# -----Disable Allow Guest To Connect To Shared Folders-----
-# ----------------------------------------------------------
-#echo '--- Disable Allow Guest To Connect To Shared Folders'
-#sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server.plist AllowGuestAccess -bool #true
-# ----------------------------------------------------------
-
-
-
-# ----------------------------------------------------------
 # ----------------Security Audit Retention------------------
 # ----------------------------------------------------------
 echo '--- 10. SETTING AUDITING RETENTION'
