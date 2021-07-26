@@ -21,8 +21,8 @@ for OneHome in $LocalHomes; do
 # ----------------------------------------------------------
 # ---------------------Enable firewall----------------------
 # ----------------------------------------------------------
-echo '--- 1. ENABLE FIREWALL'
-/usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
+#echo '--- 1. ENABLE FIREWALL'
+#/usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
 # ----------------------------------------------------------
 
 
@@ -30,9 +30,9 @@ echo '--- 1. ENABLE FIREWALL'
 # ----------------------------------------------------------
 # ----------Disable Handoff Between Mac and Icloud----------
 # ----------------------------------------------------------
-echo '--- 2. DISABLE HANDOFF MAC AND ICLOUD'
-sudo -u $userName defaults write $OneHome/Library/Preferences/ByHost/com.apple.coreservices.useractivityd.plist ActivityAdvertisingAllowed -bool no
-sudo -u $userName defaults write $OneHome/Library/Preferences/ByHost/com.apple.coreservices.useractivityd.plist ActivityReceivingAllowed -bool no
+#echo '--- 2. DISABLE HANDOFF MAC AND ICLOUD'
+#sudo -u $userName defaults write $OneHome/Library/Preferences/ByHost/com.apple.coreservices.useractivityd.plist ActivityAdvertisingAllowed -bool no
+#sudo -u $userName defaults write $OneHome/Library/Preferences/ByHost/com.apple.coreservices.useractivityd.plist ActivityReceivingAllowed -bool no
 # ----------------------------------------------------------
 
 
@@ -40,12 +40,12 @@ sudo -u $userName defaults write $OneHome/Library/Preferences/ByHost/com.apple.c
 # ----------------------------------------------------------
 # -------------------Enable Auto Updates Mac----------------
 # ----------------------------------------------------------
-echo '--- 3. ENABLE AUTO UPDATES'
-/usr/bin/defaults write /Library/Preferences/com.apple.SoftwareUpdate.plist AutomaticCheckEnabled -bool true
-/usr/bin/defaults write /Library/Preferences/com.apple.SoftwareUpdate.plist AutomaticDownload -bool true
-/usr/bin/defaults write /Library/Preferences/com.apple.SoftwareUpdate.plist AutomaticallyInstallMacOSUpdates -bool true
-/usr/bin/defaults write /Library/Preferences/com.apple.commerce.plist AutoUpdate -bool true
-/usr/bin/defaults write /Library/Preferences/com.apple.SoftwareUpdate.plist CriticalUpdateInstall -bool true
+#echo '--- 3. ENABLE AUTO UPDATES'
+#/usr/bin/defaults write /Library/Preferences/com.apple.SoftwareUpdate.plist AutomaticCheckEnabled -bool true
+#/usr/bin/defaults write /Library/Preferences/com.apple.SoftwareUpdate.plist AutomaticDownload -bool true
+#/usr/bin/defaults write /Library/Preferences/com.apple.SoftwareUpdate.plist AutomaticallyInstallMacOSUpdates -bool true
+#/usr/bin/defaults write /Library/Preferences/com.apple.commerce.plist AutoUpdate -bool true
+#/usr/bin/defaults write /Library/Preferences/com.apple.SoftwareUpdate.plist CriticalUpdateInstall -bool true
 # ----------------------------------------------------------
 
 
@@ -63,9 +63,9 @@ sudo -u $userName defaults -currentHost write com.apple.screensaver idleTime -in
 # ----------------------------------------------------------
 # -----------------Enable Tap to Click----------------------
 # ----------------------------------------------------------
-echo '--- 5. ENABLE TAP TO CLICK'
+#echo '--- 5. ENABLE TAP TO CLICK'
 #sudo -u ${USER_NAME[@]} defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
-sudo -u $userName defaults write $OneHome/Library/Preferences/com.apple.AppleMultitouchTrackpad Clicking -bool true
+#sudo -u $userName defaults write $OneHome/Library/Preferences/com.apple.AppleMultitouchTrackpad Clicking -bool true
 # ----------------------------------------------------------
 
 
@@ -73,9 +73,9 @@ sudo -u $userName defaults write $OneHome/Library/Preferences/com.apple.AppleMul
 # ----------------------------------------------------------
 # ------------Enable/Disable Ad Limit Tracking--------------
 # ----------------------------------------------------------
-echo '--- 6. DISABLE LIMIT AD TRACKING / AD PERSONALIZE'
+#echo '--- 6. DISABLE LIMIT AD TRACKING / AD PERSONALIZE'
 #sudo -u ${USER_NAME[@]} defaults write com.apple.AdLib allowApplePersonalizedAdvertising -bool true
-sudo -u $userName defaults write $OneHome/Library/Preferences/com.apple.AdLib.plist allowApplePersonalizedAdvertising -bool false
+#sudo -u $userName defaults write $OneHome/Library/Preferences/com.apple.AdLib.plist allowApplePersonalizedAdvertising -bool false
 # ----------------------------------------------------------
 
 
@@ -83,8 +83,8 @@ sudo -u $userName defaults write $OneHome/Library/Preferences/com.apple.AdLib.pl
 # ----------------------------------------------------------
 # ---------------Disable Share Mac Analytics----------------
 # ----------------------------------------------------------
-echo '--- 7. DISABLE SHARE MAC ANALYTICS'
-sudo defaults write /Library/Application\ Support/CrashReporter/DiagnosticMessagesHistory.plist AutoSubmit -bool false
+#echo '--- 7. DISABLE SHARE MAC ANALYTICS'
+#sudo defaults write /Library/Application\ Support/CrashReporter/DiagnosticMessagesHistory.plist AutoSubmit -bool false
 # ----------------------------------------------------------
 
 
@@ -92,8 +92,8 @@ sudo defaults write /Library/Application\ Support/CrashReporter/DiagnosticMessag
 # ----------------------------------------------------------
 # ------------------Setting Date & Time---------------------
 # ----------------------------------------------------------
-echo '--- 8. SETTING DATE & TIME'
-sudo systemsetup -settimezone Asia/Jakarta
+#echo '--- 8. SETTING DATE & TIME'
+#sudo systemsetup -settimezone Asia/Jakarta
 # ----------------------------------------------------------
 
 
@@ -101,8 +101,8 @@ sudo systemsetup -settimezone Asia/Jakarta
 # ----------------------------------------------------------
 # ----------------Turn On Filename Extension----------------
 # ----------------------------------------------------------
-echo '--- 9. TURN ON FILENAME EXTENSIONS'
-sudo -u $userName defaults write $OneHome/Library/Preferences/.GlobalPreferences.plist AppleShowAllExtensions -bool true
+#echo '--- 9. TURN ON FILENAME EXTENSIONS'
+#sudo -u $userName defaults write $OneHome/Library/Preferences/.GlobalPreferences.plist AppleShowAllExtensions -bool true
 # ----------------------------------------------------------
 
 
@@ -110,8 +110,8 @@ sudo -u $userName defaults write $OneHome/Library/Preferences/.GlobalPreferences
 # ----------------------------------------------------------
 # ----------------Security Audit Retention------------------
 # ----------------------------------------------------------
-echo '--- 10. SETTING AUDITING RETENTION'
-sed -I.backup 's/.*expire-after.*/expire-after:60d/' /etc/security/audit_control;
+#echo '--- 10. SETTING AUDITING RETENTION'
+#sed -I.backup 's/.*expire-after.*/expire-after:60d/' /etc/security/audit_control;
 # ----------------------------------------------------------
 
 
@@ -119,8 +119,8 @@ sed -I.backup 's/.*expire-after.*/expire-after:60d/' /etc/security/audit_control
 # ----------------------------------------------------------
 # -----------------Check Audit Records----------------------
 # ----------------------------------------------------------
-echo '--- 11. CHECK AUDIT RECORDS'
-sudo ls -le /etc/security/audit_control && ls -le /var/audit/
+#echo '--- 11. CHECK AUDIT RECORDS'
+#sudo ls -le /etc/security/audit_control && ls -le /var/audit/
 # ----------------------------------------------------------
 
 
@@ -128,8 +128,8 @@ sudo ls -le /etc/security/audit_control && ls -le /var/audit/
 # ----------------------------------------------------------
 # ---------------------Check Hostname-----------------------
 # ----------------------------------------------------------
-echo '--- 12. CHECK HOSTNAME'
-hostname
+#echo '--- 12. CHECK HOSTNAME'
+#hostname
 # ----------------------------------------------------------
 
 
@@ -137,9 +137,9 @@ hostname
 # ----------------------------------------------------------
 # -------------------Enable Filevault-----------------------
 # ----------------------------------------------------------
-echo '--- 13. ENABLE FILEVAULT'
-echo '--- Please plug your charger & DONT FORGET to save your RECOVERY KEY!'
-sudo fdesetup enable
+#echo '--- 13. ENABLE FILEVAULT'
+#echo '--- Please plug your charger & DONT FORGET to save your RECOVERY KEY!'
+#sudo fdesetup enable
 # ----------------------------------------------------------
 
 
