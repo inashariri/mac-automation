@@ -13,7 +13,7 @@ if [ "$EUID" -ne 0 ]; then
     exit 0
 fi
 
-LocalHomes=$(/usr/bin/dscl . -list /Users NFSHomeDirectory | grep -v /var/ | grep -v /Library/ | awk '$2 ~ /^\// {print $2;}')
+LocalHomes=$(/usr/bin/dscl . -list /Users NFSHomeDirectory | grep -v /var/ | grep -v /Library/ | grep -v /Users/admin | awk '$2 ~ /^\// {print $2;}')
 
 for OneHome in $LocalHomes; do
     userName=$(/bin/echo $OneHome | awk -F "/" '{print $NF;}')
